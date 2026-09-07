@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useIdentity } from '../context/IdentityContext';
 import { Button } from '../components/common/Button';
-import { Shield, ArrowRight, User, Mail, Phone, Lock, CheckCircle2, Home, ArrowLeft } from 'lucide-react';
+import { Shield, ArrowRight, User, Mail, Phone, Lock, CheckCircle2, ArrowLeft } from 'lucide-react';
 
 export const SignUpPage: React.FC = () => {
   const [name, setName] = useState('');
@@ -166,15 +166,6 @@ export const SignUpPage: React.FC = () => {
               Create Identity Profile
             </Button>
           </form>
-
-          {/* Go to Main Front Landing UI Button */}
-          <Link
-            to="/"
-            className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-all text-center shadow-subtle group"
-          >
-            <Home className="w-4 h-4 text-slate-500 group-hover:text-brand-600 transition-colors" />
-            <span>Go to Main Dashboard</span>
-          </Link>
 
           <div className="text-center pt-3 border-t border-slate-100 text-xs text-slate-500">
             Already have an identity profile?{' '}
