@@ -7,8 +7,12 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Dependencies
+# Dependencies & Environments
 node_modules/
+myenv/
+venv/
+.venv/
+env/
 
 # Production build output
 dist/
