@@ -66,11 +66,17 @@ export const PublicNavbar: React.FC = () => {
           </a>
         </nav>
 
-        {/* Right: Sign In & Explore Demo */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Right: Create Identity, Sign In & Explore Demo */}
+        <div className="hidden sm:flex items-center gap-2">
+          <Link
+            to="/signup"
+            className="text-xs font-semibold text-slate-700 hover:text-brand-600 px-3 py-2 rounded-lg transition-colors"
+          >
+            Create Identity
+          </Link>
           <Link
             to="/login"
-            className="text-xs font-semibold text-slate-700 hover:text-navy-900 px-3 py-2 rounded-lg transition-colors"
+            className="text-xs font-semibold text-slate-700 hover:text-brand-600 px-3 py-2 rounded-lg transition-colors"
           >
             Sign In
           </Link>
@@ -127,6 +133,13 @@ export const PublicNavbar: React.FC = () => {
               Privacy
             </a>
             <div className="pt-3 border-t border-slate-100 flex flex-col gap-2">
+              <Link
+                to="/signup"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full text-center py-2 text-xs font-semibold text-brand-600 border border-brand-200 bg-brand-50 rounded-lg hover:bg-brand-100"
+              >
+                Create Identity
+              </Link>
               <Link
                 to="/login"
                 onClick={() => setMobileMenuOpen(false)}

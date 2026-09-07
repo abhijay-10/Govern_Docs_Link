@@ -16,7 +16,8 @@ import {
   LogOut,
   Shield,
   HelpCircle,
-  ExternalLink
+  ExternalLink,
+  Home
 } from 'lucide-react';
 
 export const Sidebar: React.FC = () => {
@@ -37,6 +38,7 @@ export const Sidebar: React.FC = () => {
   const secondaryNavigation = [
     { name: 'Settings', href: '/settings', icon: Settings },
     { name: 'Privacy & Security', href: '/privacy', icon: ShieldAlert },
+    { name: 'Main Landing UI', href: '/', icon: Home },
   ];
 
   const handleLogout = () => {

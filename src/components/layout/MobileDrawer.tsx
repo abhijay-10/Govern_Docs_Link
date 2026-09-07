@@ -15,6 +15,7 @@ import {
   Shield,
   LogOut,
   HelpCircle,
+  Home,
 } from 'lucide-react';
 
 export interface MobileDrawerProps {
@@ -37,6 +38,7 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
     { name: 'Activity Log', href: '/activity', icon: History },
     { name: 'Settings', href: '/settings', icon: Settings },
     { name: 'Privacy & Security', href: '/privacy', icon: ShieldAlert },
+    { name: 'Main Landing UI', href: '/', icon: Home },
   ];
 
   return (

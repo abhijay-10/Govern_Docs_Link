@@ -10,7 +10,8 @@ import {
   Menu, 
   ExternalLink,
   CheckCircle2,
-  Lock
+  Lock,
+  Home
 } from 'lucide-react';
 
 export interface TopNavbarProps {
@@ -61,6 +62,16 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({ onToggleMobileMenu }) => {
           >
             Add Document
           </Button>
+        </Link>
+
+        {/* Go to Front Landing UI */}
+        <Link
+          to="/"
+          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-slate-100 hover:bg-slate-200/80 rounded-xl transition-colors border border-slate-200/60"
+          title="Go to Front Landing UI"
+        >
+          <Home className="w-3.5 h-3.5 text-slate-500" />
+          <span className="hidden lg:inline">Front Landing UI</span>
         </Link>
 
         {/* Notifications */}
