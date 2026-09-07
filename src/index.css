@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#F4F7FB] text-navy-900 min-h-screen selection:bg-brand-100 selection:text-brand-900;
+  }
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Background textures */
+.bg-dot-grid {
+  background-image: radial-gradient(rgba(11, 18, 32, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.bg-dot-grid-dark {
+  background-image: radial-gradient(rgba(78, 167, 255, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-fine-lines-dark {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.radial-glow-hero {
+  background: radial-gradient(circle at 60% 40%, rgba(49, 94, 246, 0.09) 0%, rgba(78, 167, 255, 0.04) 45%, transparent 70%);
+}
+
+.radial-glow-navy {
+  background: radial-gradient(circle at 50% 30%, rgba(49, 94, 246, 0.18) 0%, rgba(78, 167, 255, 0.08) 40%, transparent 70%);
+}
+
+.radial-glow-cta {
+  background: radial-gradient(circle at 50% 50%, rgba(49, 94, 246, 0.25) 0%, rgba(78, 167, 255, 0.12) 50%, transparent 80%);
+}
+
+/* Subtle pulse animation for active secure graph nodes */
+@keyframes subtle-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite ease-in-out;
+}
+
+/* Traveling stroke dash animation */
+@keyframes flow-line {
+  from {
+    stroke-dashoffset: 40;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-flow-line {
+  stroke-dasharray: 6 6;
+  animation: flow-line 2s linear infinite;
+}
+
