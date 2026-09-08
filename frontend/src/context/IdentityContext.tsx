@@ -41,6 +41,12 @@ interface IdentityContextType {
   // Actions
   login: (identifier: string, pass: string) => Promise<void>;
   loginDemo: () => Promise<void>;
+  sendOtp: (email: string, mode?: 'login' | 'signup') => Promise<any>;
+  verifyOtp: (
+    email: string, 
+    otp: string, 
+    signupData?: { name?: string; mobile?: string; mode?: 'login' | 'signup' }
+  ) => Promise<void>;
   signup: (name: string, email: string, mobile: string) => Promise<void>;
   logout: () => void;
   addDocument: (type: DocumentType, customTitle?: string) => Promise<void>;
@@ -98,6 +104,26 @@ export const IdentityProvider: React.FC<{ children: ReactNode }> = ({ children }
     setUser(profile);
     setIsAuthenticated(true);
     addToast('Demo Mode Active', 'Loaded sample verified identity profile', 'info');
+  };
+
+  const sendOtp = async (email: string, mode: 'login' | 'signup' = 'login') => {
+    const res = await authService.sendOtp(email, mode);
+    addToast('OTP Dispatched', `Verification code sent to ${email}`, 'info');
+    return res;
+  };
+
+  const verifyOtp = async (
+    email: string, 
+    otp: string, 
+    signupData?: { name?: string; mobile?: string; mode?: 'login' | 'signup' }
+  ) => {
+    const res = await authService.verifyOtp(email, otp, signupData);
+    if (res.access_token) {
+      localStorage.setItem('oneid_access_token', res.access_token);
+    }
+    setUser(res.user);
+    setIsAuthenticated(true);
+    addToast(signupData?.mode === 'signup' ? 'Profile Created' : 'Login Successful', `Welcome, ${res.user.name}!`, 'success');
   };
 
   const signup = async (name: string, email: string, mobile: string) => {
@@ -242,6 +268,8 @@ export const IdentityProvider: React.FC<{ children: ReactNode }> = ({ children }
         toasts,
         login,
         loginDemo,
+        sendOtp,
+        verifyOtp,
         signup,
         logout,
         addDocument,

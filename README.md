@@ -64,26 +64,26 @@ It allows an individual to securely associate multiple identity documents (Aadha
 
 ### Installation & Launch
 
-1. **Install dependencies**:
-   ```bash
-   npm install
-   ```
+#### 1. Frontend (React + Vite + Tailwind CSS)
+Navigate to the `frontend/` folder:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+The web application will be live at `http://localhost:3000`.
 
-2. **Run local development server**:
-   ```bash
-   npm run dev
-   ```
-   The application will be accessible at `http://localhost:3000` (or the port specified by Vite).
+#### 2. Backend (FastAPI OTP Authentication Engine)
+From the root directory with your Python environment:
+```bash
+# Activate your virtual environment
+myenv\Scripts\activate
 
-3. **Build for production**:
-   ```bash
-   npm run build
-   ```
-
-4. **Preview production bundle**:
-   ```bash
-   npm run preview
-   ```
+# Launch the FastAPI backend
+python backend/run.py
+```
+- API server: `http://127.0.0.1:8000`
+- Interactive API Docs (Swagger): `http://127.0.0.1:8000/docs`
 
 ---
 
